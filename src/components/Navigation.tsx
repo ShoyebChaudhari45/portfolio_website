@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Home, User, Code, Briefcase, Mail } from 'lucide-react';
+import { Menu, X, Home, User, Code, Briefcase, Award, Mail } from 'lucide-react';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +9,9 @@ const Navigation: React.FC = () => {
     { id: 'hero', label: 'Home', icon: Home },
     { id: 'about', label: 'About', icon: User },
     { id: 'skills', label: 'Skills', icon: Code },
-    { id: 'projects', label: 'Projects', icon: Briefcase },
+    { id: 'experience', label: 'Experience', icon: Briefcase },
+    { id: 'projects', label: 'Projects', icon: Code },
+    { id: 'achievements', label: 'Achievements', icon: Award },
     { id: 'contact', label: 'Contact', icon: Mail },
   ];
 

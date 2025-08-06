@@ -9,35 +9,39 @@ const Skills: React.FC = () => {
 
   const skillCategories = [
     {
-      title: 'Frontend',
+      title: 'Mobile Development',
       color: 'from-cyan-400 to-blue-500',
       skills: [
-        { name: 'React', level: 95 },
-        // { name: 'Node.js', level: 90 },
-        { name: 'Next.js', level: 88 },
-        { name: 'Tailwind CSS', level: 92 },
-        // { name: 'Framer Motion', level: 85 },
+        { name: 'Android (Java)', level: 92 },
+        { name: 'Firebase', level: 88 },
+        { name: 'Material UI', level: 85 },
       ],
     },
     {
-      title: 'Backend',
+      title: 'Web Development',
       color: 'from-purple-400 to-pink-500',
       skills: [
-        { name: 'Node.js', level: 90 },
-        { name: 'Python', level: 70 },
-        // { name: 'PostgreSQL', level: 88 },
-        { name: 'MongoDB', level: 82 },
-        // { name: 'GraphQL', level: 80 },
+        { name: 'HTML/CSS/JS', level: 90 },
+        { name: 'React', level: 85 },
+        { name: 'Flask', level: 82 },
       ],
     },
     {
-      title: 'Cloud & AI',
+      title: 'AI/ML & Tools',
       color: 'from-green-400 to-emerald-500',
       skills: [
-        { name: 'AWS', level: 85 },
-        { name: 'Git-Github', level: 88 },
-        { name: 'ChatGPT', level: 100 },
-       
+        { name: 'Python (AI/ML)', level: 80 },
+        { name: 'scikit-learn / TensorFlow Lite', level: 75 },
+        { name: 'Git & GitHub', level: 90 },
+      ],
+    },
+    {
+      title: 'Databases & APIs',
+      color: 'from-orange-400 to-red-500',
+      skills: [
+        { name: 'MongoDB', level: 85 },
+        { name: 'MySQL', level: 80 },
+        { name: 'REST API Development', level: 88 },
       ],
     },
   ];
@@ -50,11 +54,11 @@ const Skills: React.FC = () => {
             Skills<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">.</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Technologies and tools I use to bring ideas to life
+            Technologies and tools I use to craft intelligent and scalable solutions
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={category.title}

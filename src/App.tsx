@@ -5,18 +5,16 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
+import Experience from './components/Experience'; // ✅ Import Experience
 import Projects from './components/Projects';
+import Achievements from './components/Achievements'; // ✅ Import Achievements (we’ll create this)
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
   useEffect(() => {
-    // Update document title
-    document.title = 'Afroz Sheikh';
-    
-    // Add smooth scrolling behavior
+    document.title = 'Shoyeb Chaudhari'; // ✅ Update your name
     document.documentElement.style.scrollBehavior = 'smooth';
-    
     return () => {
       document.documentElement.style.scrollBehavior = 'auto';
     };
@@ -32,7 +30,9 @@ function App() {
         <Hero />
         <About />
         <Skills />
+        <Experience /> {/* ✅ Added Experience */}
         <Projects />
+        <Achievements /> {/* ✅ Added Achievements */}
         <Contact />
       </main>
       

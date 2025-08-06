@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { ExternalLink, Github, X } from 'lucide-react';
-import study from "../images/studynotion.png"
-import krushi from "../images/krushimitra.png"
-import port from "../images/portfolio.png"
-import sign from "../images/sign.png"
+
+import safario from "../images/krushimitra.png";
+import smsSpam from "../images/sign.png";
+import votingSystem from "../images/studynotion.png";
+import campusCircle from "../images/portfolio.png"; // Add image for campus circle project
 
 const Projects: React.FC = () => {
   const { ref, inView } = useInView({
@@ -17,46 +18,45 @@ const Projects: React.FC = () => {
   const projects = [
     {
       id: 1,
-      title: 'StudyNotion',
-      description: 'An ed-tech platform with secure authentication and course purchase system built using the MERN stack.',
-      image: study , 
-      tech: ['React.js', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
-      github: 'https://github.com/AfrozSheikh/studynotion',
-      live: 'https://studynotion-jade.vercel.app/',
+      title: 'Safario – Trip Planner App',
+      description: 'A travel planner app with location search, itinerary management, and trip sharing using Google Maps API.',
+      image: safario,
+      tech: ['Java', 'Firebase', 'Google Maps API', 'Material UI'],
+      github: 'https://github.com/ShoyebChaudhari45/safario', // Replace with actual GitHub link
+      live: '#',
       featured: true,
     },
     {
       id: 2,
-      title: 'KrushiMitra',
-      description: 'AI-based crop recommendation system using soil data, geolocation, and weather forecasting.',
-      image: krushi,
-      tech: ['React.js', 'Node.js', 'Gemini AI', 'MongoDB', 'OpenWeatherMap API'],
-      github: 'https://github.com/AfrozSheikh/krushimitra',
+      title: 'SMS Spam Detection',
+      description: 'Android + Flask app to detect spam messages using a signature-based detection method.',
+      image: smsSpam,
+      tech: ['Java', 'Flask', 'Retrofit', 'RecyclerView'],
+      github: 'https://github.com/ShoyebChaudhari45/SMSSpam', // Replace with actual GitHub link
       live: '#',
       featured: true,
     },
     {
       id: 3,
-      title: 'SignVerse',
-      description: 'Real-time ASL recognition web app that converts hand gestures into text and speech.',
-      image: sign,
-      tech: ['Flask', 'MediaPipe', 'Random Forest', 'OpenCV', 'Tailwind CSS'],
-      github: 'https://github.com/AfrozSheikh/signverse',
+      title: 'Biometric Web Voting System',
+      description: 'Web-based voting system using Flask and DeepFace for secure facial recognition authentication.',
+      image: votingSystem,
+      tech: ['Flask', 'DeepFace', 'OpenCV', 'MongoDB'],
+      github: 'https://github.com/ShoyebChaudhari45/BiometricVoting', // Replace with actual GitHub link
       live: '#',
       featured: false,
     },
     {
       id: 4,
-      title: 'Portfolio Website',
-      description: 'Personal portfolio to showcase projects, resume, and contact information using modern animations.',
-      image:port,
-      tech: ['React.js', 'Framer Motion', 'Tailwind CSS'],
-      github: 'https://github.com/AfrozSheikh/portfolio',
-      live: 'https://afroz-portfolio.vercel.app/',
+      title: 'Campus Circle – Alumni Association Platform',
+      description: 'A platform for alumni networking, job sharing, and event management built for college communities.',
+      image: campusCircle,
+      tech: ['React.js', 'Node.js', 'MongoDB', 'Tailwind CSS'],
+      github: 'https://github.com/ShoyebChaudhari45/CampusCircle', // Replace with actual GitHub link
+      live: '#',
       featured: false,
     },
   ];
-  
 
   return (
     <section id="projects" className="py-20 bg-gradient-to-b from-black to-gray-900">
@@ -66,7 +66,7 @@ const Projects: React.FC = () => {
             Projects<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">.</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Showcasing innovative solutions and cutting-edge implementations
+            Highlighting impactful applications and real-world solutions
           </p>
         </div>
 
@@ -80,7 +80,7 @@ const Projects: React.FC = () => {
             >
               <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-cyan-400/50 transition-all duration-500">
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
+
                 <div className="relative">
                   <div className="aspect-video overflow-hidden">
                     <img
@@ -90,7 +90,7 @@ const Projects: React.FC = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                   </div>
-                  
+
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-3">
                       <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
@@ -102,11 +102,11 @@ const Projects: React.FC = () => {
                         </span>
                       )}
                     </div>
-                    
+
                     <p className="text-gray-400 text-sm mb-4 line-clamp-2">
                       {project.description}
                     </p>
-                    
+
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.tech.slice(0, 3).map((tech) => (
                         <span
@@ -122,7 +122,7 @@ const Projects: React.FC = () => {
                         </span>
                       )}
                     </div>
-                    
+
                     <div className="flex space-x-3">
                       <a
                         href={project.github}
@@ -148,7 +148,7 @@ const Projects: React.FC = () => {
           ))}
         </div>
 
-        {/* Project Modal */}
+        {/* Modal for selected project */}
         {selectedProject && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
             <div className="relative max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-gradient-to-br from-gray-900 to-black rounded-xl border border-gray-800">
@@ -158,7 +158,7 @@ const Projects: React.FC = () => {
               >
                 <X size={20} />
               </button>
-              
+
               <div className="aspect-video overflow-hidden rounded-t-xl">
                 <img
                   src={selectedProject.image}
@@ -166,11 +166,11 @@ const Projects: React.FC = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              
+
               <div className="p-8">
                 <h3 className="text-3xl font-bold text-white mb-4">{selectedProject.title}</h3>
                 <p className="text-gray-300 text-lg mb-6">{selectedProject.description}</p>
-                
+
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
                     <h4 className="text-xl font-semibold text-white mb-3">Technologies Used</h4>
@@ -185,7 +185,7 @@ const Projects: React.FC = () => {
                       ))}
                     </div>
                   </div>
-                  
+
                   <div>
                     <h4 className="text-xl font-semibold text-white mb-3">Links</h4>
                     <div className="space-y-3">

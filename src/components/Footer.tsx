@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
             <Heart className="text-red-500" size={16} />
             <span>and</span>
             <Code className="text-cyan-400" size={16} />
-            <span className='text-blue-600'>by Afroz Sheikh</span>
+            <span className='text-blue-600'>by Shoyeb Chaudhari </span>
           </div>
           
          

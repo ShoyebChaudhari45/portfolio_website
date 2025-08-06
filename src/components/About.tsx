@@ -1,6 +1,6 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Calendar, Award, Code, Zap } from 'lucide-react';
+import { Calendar, Award } from 'lucide-react';
 
 const About: React.FC = () => {
   const { ref, inView } = useInView({
@@ -11,8 +11,8 @@ const About: React.FC = () => {
   const skills = [
     { name: 'Frontend Development', level: 90, color: 'from-cyan-400 to-blue-500' },
     { name: 'Backend Development', level: 85, color: 'from-purple-400 to-pink-500' },
-    // { name: 'Machine Learning', level: 80, color: 'from-green-400 to-emerald-500' },
-    { name: 'Cloud', level: 75, color: 'from-orange-400 to-red-500' },
+    { name: 'Android Development', level: 88, color: 'from-green-400 to-emerald-500' },
+    { name: 'AI/ML Integration', level: 80, color: 'from-orange-400 to-red-500' },
   ];
 
   const timeline = [
@@ -20,22 +20,15 @@ const About: React.FC = () => {
       year: '2026',
       title: 'B.Tech in Computer Science',
       company: 'CSMSS Chh. Shahu College of Engineering',
-      description: 'Graduating with strong foundations in full-stack development and machine learning.',
+      description: 'Pursuing Bachelor of Technology in Computer Science with focus on modern technologies and AI integration.',
       icon: Award,
     },
     {
-      year: '2025',
-      title: 'Built SignVerse (Sign Language Detection)',
-      company: 'College Project',
-      description: 'Developed a real-time ASL to speech web app using Flask, MediaPipe, and ML.',
-      icon: Code,
-    },
-    {
-      year: '2025',
-      title: 'GSSoC Contributor',
-      company: 'GirlScript Summer of Code',
-      description: 'Contributed to open-source web projects using React and Node.js.',
-      icon: Zap,
+      year: '2023',
+      title: 'Diploma in Computer Engineering',
+      company: 'Government Polytechnic, Jalna',
+      description: 'Completed diploma with strong fundamentals in programming, software engineering, and databases.',
+      icon: Award,
     },
   ];
 
@@ -47,7 +40,7 @@ const About: React.FC = () => {
             About<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">.</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Passionate full-stack developer and AI enthusiast, building inclusive tech solutions.
+            I’m Shoyeb Chaudhari — a passionate Computer Science student focused on building impactful digital solutions and exploring cutting-edge technologies in web, mobile, and AI/ML.
           </p>
         </div>
 
@@ -57,12 +50,12 @@ const About: React.FC = () => {
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-lg blur opacity-25" />
               <div className="relative bg-black/50 backdrop-blur-sm p-8 rounded-lg border border-gray-800">
-                <h3 className="text-2xl font-bold text-white mb-4">My Journey</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Who I Am</h3>
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  I'm Afroz Sheikh, a Computer Science undergrad with a passion for real-time web applications and AI-driven solutions.
+                  A final-year B.Tech Computer Science student with a strong interest in full-stack development, Android applications, and AI-driven solutions.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
-                  I've worked on impactful projects like SignVerse, KrushiMitra, and StudyNotion, combining frontend finesse with backend logic and ML models.
+                  Constantly learning and innovating, I aim to develop scalable, real-world applications that solve practical problems.
                 </p>
               </div>
             </div>
@@ -89,12 +82,12 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Side - Timeline */}
+          {/* Right Side - Education Timeline */}
           <div className={`space-y-8 ${inView ? 'animate-fade-in-right' : 'opacity-0'}`}>
-            <h3 className="text-2xl font-bold text-white mb-8">Timeline</h3>
+            <h3 className="text-2xl font-bold text-white mb-8">Education</h3>
             {timeline.map((item, index) => (
               <div
-                key={item.year}
+                key={`${item.year}-${index}`}
                 className="relative flex items-start space-x-4 group"
                 style={{ animationDelay: `${index * 0.3}s` }}
               >
@@ -115,6 +108,7 @@ const About: React.FC = () => {
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </section>

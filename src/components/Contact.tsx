@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, FileText } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const { ref, inView } = useInView({
@@ -20,10 +20,10 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 2000));
-    
+
     setIsSubmitting(false);
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
@@ -39,27 +39,26 @@ const Contact: React.FC = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'afrozsheikh1112@gmail.com',
-      href: 'mailto:afrozsheikh1112@gmail.com',
+      value: 'chaudharishoyeb@gmail.com', // ✅ Your email
+      href: 'mailto:chaudharishoyeb@gmail.com',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+919766432374',
-      href: 'tel:+919766432374',
+      value: '+91-7499601744',
+      href: 'tel:+917499601744',
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Chh.Sambhajinagar, MH',
+      value: 'Chh. Sambhajinagar, MH, India',
       href: '#',
     },
   ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/AfrozSheikh', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/in/afroz-sheikh-404268262/', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://x.com/Afroz8329', label: 'Twitter' },
+    { icon: Github, href: 'https://github.com/ShoyebChaudhari45', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/shoyeb-chaudhari1/', label: 'LinkedIn' },
   ];
 
   return (
@@ -119,6 +118,18 @@ const Contact: React.FC = () => {
                   </a>
                 ))}
               </div>
+            </div>
+
+            {/* Resume Download Button */}
+            <div className="pt-6">
+              <a
+                href="/resume.pdf" // ✅ Place your resume in public folder as resume.pdf
+                download
+                className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-cyan-400 to-purple-500 text-black font-semibold rounded-lg hover:opacity-90 transition-all duration-300"
+              >
+                <FileText size={20} />
+                <span>Download Resume</span>
+              </a>
             </div>
           </div>
 

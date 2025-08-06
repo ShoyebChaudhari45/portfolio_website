@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowDown, Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import ParticleBackground from './ParticleBackground';
 import GlitchText from './GlitchText';
 
@@ -35,37 +35,40 @@ const Hero: React.FC = () => {
       />
 
       <div className="text-center z-10 px-4">
+        {/* Name */}
         <div className="mb-8">
           <GlitchText
-            text="AFROZ SHEIKH"
+            text="SHOYEB CHAUDHARI"
             className="text-6xl md:text-8xl font-bold font-mono bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
           />
         </div>
 
+        {/* Tagline */}
         <div className="mb-8 overflow-hidden">
           <p className="text-xl md:text-2xl text-gray-300 animate-fade-in-up font-light tracking-wide">
-            I code visions into digital reality
+            Building intelligent systems for a smarter world
           </p>
         </div>
 
+        {/* Short Intro */}
         <div className="mb-12">
           <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Full-stack developer crafting immersive digital experiences with cutting-edge technologies.
-            Specializing in React, Node.js, and cloud architecture.
+            Python Developer | Android & Web Projects | AI/ML Enthusiast | Founder of KodeNeurons
           </p>
         </div>
 
         {/* Social Icons */}
         <div className="flex justify-center space-x-6 mb-12">
           {[
-            { icon: Github, href: 'https://github.com/AfrozSheikh', label: 'GitHub' },
-            { icon: Linkedin, href: 'https://www.linkedin.com/in/afroz-sheikh-404268262/', label: 'LinkedIn' },
-            // { icon: Twitter, href: '#', label: 'Twitter' },
-            // { icon: Mail, href: '#', label: 'Email' },
+            { icon: Github, href: 'https://github.com/ShoyebChaudhari45', label: 'GitHub' },
+            { icon: Linkedin, href: 'https://www.linkedin.com/in/shoyeb-chaudhari1/', label: 'LinkedIn' },
+            { icon: Mail, href: 'mailto:chaudharishoyeb@gmail.com', label: 'Email' },
           ].map((social, index) => (
             <a
               key={social.label}
               href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-3 bg-black/20 backdrop-blur-sm rounded-full border border-cyan-400/20 text-gray-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-all duration-300 interactive group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
