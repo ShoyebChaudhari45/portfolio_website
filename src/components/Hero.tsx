@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, FileText, Github, Linkedin, Mail } from 'lucide-react';
 import ParticleBackground from './ParticleBackground';
 import GlitchText from './GlitchText';
 
@@ -58,34 +58,48 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Social Icons */}
-        <div className="flex justify-center space-x-6 mb-12">
-          {[
-            { icon: Github, href: 'https://github.com/ShoyebChaudhari45', label: 'GitHub' },
-            { icon: Linkedin, href: 'https://www.linkedin.com/in/shoyeb-chaudhari1/', label: 'LinkedIn' },
-            { icon: Mail, href: 'mailto:chaudharishoyeb@gmail.com', label: 'Email' },
-          ].map((social, index) => (
-            <a
-              key={social.label}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-black/20 backdrop-blur-sm rounded-full border border-cyan-400/20 text-gray-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-all duration-300 interactive group"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <social.icon size={24} className="group-hover:scale-110 transition-transform duration-300" />
-            </a>
-          ))}
-        </div>
+       {/* Social Icons */}
+<div className="flex justify-center space-x-6 mb-6">
+  {[
+    { icon: Github, href: 'https://github.com/ShoyebChaudhari45', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/shoyeb-chaudhari1/', label: 'LinkedIn' },
+    { icon: Mail, href: 'mailto:chaudharishoyeb@gmail.com', label: 'Email' },
+  ].map((social, index) => (
+    <a
+      key={social.label}
+      href={social.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="p-3 bg-black/20 backdrop-blur-sm rounded-full border border-cyan-400/20 text-gray-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-all duration-300 interactive group"
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      <social.icon size={24} className="group-hover:scale-110 transition-transform duration-300" />
+    </a>
+  ))}
+</div>
+
+{/* Resume Button */}
+<div className="mb-12">
+  <a
+    href="/resume.pdf"
+    download
+    className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-cyan-400 to-purple-500 text-black font-semibold rounded-full hover:opacity-90 transition-all duration-300"
+  >
+    <FileText size={20} />
+    <span>Download Resume</span>
+  </a>
+</div>
+
 
         {/* CTA Button */}
-        <button
+        {/* <button
           onClick={scrollToAbout}
           className="group relative px-8 py-4 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full text-black font-semibold text-lg overflow-hidden interactive"
         >
           <span className="relative z-10">Let's Connect</span>
           <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
           <div className="absolute inset-0 rounded-full border-2 border-transparent bg-gradient-to-r from-cyan-400 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
-        </button>
+        </button> */}
       </div>
 
       {/* Scroll Indicator */}
