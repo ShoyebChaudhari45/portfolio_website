@@ -10,7 +10,7 @@ const ResumeView = () => {
 
       {/* PDF Viewer */}
       <iframe
-        src="resume.pdf"
+        src="/resume.pdf"
         className="flex-1"
         style={{ width: "100%", height: "100%", border: "none" }}
         title="Resume Viewer"
