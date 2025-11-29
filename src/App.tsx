@@ -5,15 +5,16 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
-import Experience from './components/Experience'; // ✅ Import Experience
+import Experience from './components/Experience';
 import Projects from './components/Projects';
-import Achievements from './components/Achievements'; // ✅ Import Achievements (we’ll create this)
+import Achievements from './components/Achievements';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ChatWidget from "./components/ChatWidget";  // ✅ Correct import
 
 function App() {
   useEffect(() => {
-    document.title = 'Shoyeb Chaudhari'; // ✅ Update your name
+    document.title = 'Shoyeb Chaudhari';
     document.documentElement.style.scrollBehavior = 'smooth';
     return () => {
       document.documentElement.style.scrollBehavior = 'auto';
@@ -25,17 +26,18 @@ function App() {
       <CursorEffect />
       <ScrollProgress />
       <Navigation />
-      
+
       <main className="relative">
         <Hero />
         <About />
         <Skills />
-        <Experience /> {/* ✅ Added Experience */}
+        <Experience />
         <Projects />
-        <Achievements /> {/* ✅ Added Achievements */}
+        <Achievements />
         <Contact />
       </main>
-      
+
+      <ChatWidget />  {/* 👈 Chatbot Bubble Here */}
       <Footer />
     </div>
   );
