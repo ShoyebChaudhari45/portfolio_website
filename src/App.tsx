@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Routes, Route } from "react-router-dom";
 import CursorEffect from './components/CursorEffect';
 import ScrollProgress from './components/ScrollProgress';
 import Navigation from './components/Navigation';
@@ -10,15 +11,14 @@ import Projects from './components/Projects';
 import Achievements from './components/Achievements';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import ChatWidget from "./components/ChatWidget";  // ✅ Correct import
+import ChatWidget from "./components/ChatWidget";
+import ResumeView from "./components/ResumeView";
 
 function App() {
   useEffect(() => {
     document.title = 'Shoyeb Chaudhari';
     document.documentElement.style.scrollBehavior = 'smooth';
-    return () => {
-      document.documentElement.style.scrollBehavior = 'auto';
-    };
+    return () => { document.documentElement.style.scrollBehavior = 'auto'; };
   }, []);
 
   return (
@@ -27,18 +27,33 @@ function App() {
       <ScrollProgress />
       <Navigation />
 
-      <main className="relative">
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Achievements />
-        <Contact />
-      </main>
+      {/* 🔥 Routes */}
+      <Routes>
+        {/* Portfolio Main Page */}
+        <Route
+          path="/"
+          element={
+            <>
+              <main className="relative">
+                <Hero />
+                <About />
+                <Skills />
+                <Experience />
+                <Projects />
+                <Achievements />
+                <Contact />
+              </main>
+              <Footer />
+            </>
+          }
+        />
+        
+        {/* Resume Viewer Page */}
+        <Route path="/resume-view" element={<ResumeView />} />
+      </Routes>
 
-      <ChatWidget />  {/* 👈 Chatbot Bubble Here */}
-      <Footer />
+      {/* 👇 Floating Chatbot always visible */}
+      <ChatWidget />
     </div>
   );
 }

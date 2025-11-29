@@ -153,14 +153,16 @@ const Contact: React.FC = () => {
 
             {/* Resume Download Button */}
             <div className="pt-6">
-              <a
-                href="/resume.pdf"
-                download
-                className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-cyan-400 to-purple-500 text-black font-semibold rounded-lg hover:opacity-90 transition-all duration-300"
-              >
-                <FileText size={20} />
-                <span>Download Resume</span>
-              </a>
+             <a
+  href="/resume-view"
+  className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-cyan-400 to-purple-500 text-black font-semibold rounded-lg hover:opacity-90 transition-all duration-300"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <FileText size={20} />
+  <span>View Resume</span>
+</a>
+
             </div>
           </div>
 

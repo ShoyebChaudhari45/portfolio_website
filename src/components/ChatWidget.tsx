@@ -152,10 +152,9 @@ const ChatWidget = () => {
             position: "fixed",
             bottom: "30px",
             right: "32px",
-            width: "450px",
-height: "610px",
-borderRadius: "20px",
-
+            width: "395px",
+            height: "540px",
+            borderRadius: "18px",
             background: "#0d0d0d",
             boxShadow: "0 0 30px rgba(0,0,0,0.55)",
             display: "flex",
